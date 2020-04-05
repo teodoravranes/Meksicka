@@ -3,3 +3,45 @@
 #include <time.h>
 
 using namespace std;
+
+enum VrstaMesa {SVINJETINA, JUNETINA, PILETINA, BEZ_MESA};
+
+class Meso 
+{
+private:
+int gramaza;
+VrstaMesa vrsta_Mesa;
+
+public:
+Meso() {gramaza=0; vrsta_mesa=BEZ_MESA;}
+Meso(const Meso &meso) {gramaza=meso.gramaza; vrsta_mesa=meso.vrsta_mesa;}
+
+bool setGramaza(int g) 
+{
+if(g<0 || g>1000)
+{
+return false;
+}else{
+gramaza=g;
+return true;
+}
+void setVrstaMesa(VrstaMesa vm) {vrsta_mesa=vm;}
+
+int getGramaza()const {return gramaza;}
+
+
+void ispisiMeso()
+{
+cout<<"Gramaza: " gramaza<<endl
+cout<<"Vrsta mesa: "<<endl;
+if(getVrstaMesa()==SVINJETINA)
+cout<<"SVINJETINA"<<endl;
+else if(getVrstaMesa()==JUNETINA)
+cout<<"JUNETINA"endl;
+else if(getVrstaMesa()==PILETINA)
+cout<<"PILETINA"<<endl;
+else if(getVrstaMesa()==BEZ_MESA)
+cout<<"Nema mesa"<<endl;
+}
+
+};
