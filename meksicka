@@ -83,3 +83,16 @@ void ispisiPrilog(const Prilog pr)
 cout<<"Vrsta priloga:" <<pr.getPrilog()<<endl;
 }
 
+enum stanjeObroka {POCETAK_ODABIRA, ODABRANO_MESO, ODABRAN_PRILOG, SPREMAN, ZAGOREO};
+
+class Obrok 
+{
+private:
+Meso m;
+Prilog p;
+stanjeObroka s;
+
+public:
+Obrok() : m(), p() {stanje=POCETAK_ODABIRA;}
+Obrok(const Obrok &o) :m(o.m), p(o.p){stanje=o.stanje;}
+
