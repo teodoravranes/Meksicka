@@ -29,19 +29,57 @@ void setVrstaMesa(VrstaMesa vm) {vrsta_mesa=vm;}
 
 int getGramaza()const {return gramaza;}
 
-
-void ispisiMeso()
+string getVrstaMesa()const
 {
-cout<<"Gramaza: " gramaza<<endl
-cout<<"Vrsta mesa: "<<endl;
-if(getVrstaMesa()==SVINJETINA)
-cout<<"SVINJETINA"<<endl;
-else if(getVrstaMesa()==JUNETINA)
-cout<<"JUNETINA"endl;
-else if(getVrstaMesa()==PILETINA)
-cout<<"PILETINA"<<endl;
-else if(getVrstaMesa()==BEZ_MESA)
-cout<<"Nema mesa"<<endl;
+if(vrsta_mesa==SVINJETINA)
+return "SVINJETINA";
+else if(vrsta_mesa==JUNETINA)
+return "JUNETINA";
+else if(vrsta_mesa==PILETINA)
+return "PILETINA";
+else
+return "BEZ MESA";
 }
 
 };
+
+void ispisiMeso(const Meso m)
+{
+cout<<"Gramaza: " << get.gramaza()<<endl
+cout<<"Vrsta mesa: "<< getVrstaMesa()<<endl;
+}
+
+enum vrstaPriloga {RIZA, POMFRIT, PASULJ, TESTENINA, BEZ_PRILOGA};
+
+class Prilog
+{
+private:
+vrstaPriloga prilog;
+
+public:
+Prilog() {prilog=BEZ_PRILOGA;}
+Prilogu(const Prilog &p) {prilog=p.priloga;}
+
+void setPrilog(vrstaPriloga pp) {prilog=pp;}
+
+string getPrilog()const 
+{
+if(prilog==RIZA)
+return "RIZA";
+else if(prilog==POMFRIT)
+return "POMFRIT";
+else if(prilog==PASULJ)
+return "PASULJ";
+else if(prilog==TESTENINA)
+return "TESTENINA";
+else
+return "BEZ PRILOGA";
+}
+
+};
+
+void ispisiPrilog(const Prilog pr)
+{
+cout<<"Vrsta priloga:" <<pr.getPrilog()<<endl;
+}
+
