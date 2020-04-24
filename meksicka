@@ -115,3 +115,13 @@ return "Obrok je spreman";
 
 stanjeObroka getStanjeObroka() {return s;}
    
+bool odaberiMeso(meso m1, int gram){
+if(gram>=1 && gram<=1000 && stanje == POCETAK_ODABIRA)
+{
+m.setVrstaMesa(m1);
+m.setGramaza(gram);
+stanje = odabranoMeso;
+return true;
+}else
+return false;
+}
