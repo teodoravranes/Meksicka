@@ -136,3 +136,21 @@ return true;
 return false;
 }
 }
+
+bool spremiObrok(){
+if(stanje == ODABRAN_PRILOG){
+int sansaDaZagori = rand()%10+1;
+if(sansaDaZagori == 1){
+stanje = ZAGOREO;
+}
+else
+{
+stanje = SPREMAN;
+}
+return true;
+}else{
+return false;
+}
+}
+
+};
