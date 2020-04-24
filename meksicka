@@ -173,3 +173,72 @@ cout<<"3. Spremite porudzbinu"<<endl;
 cin>>opcija;
 return opcija;
 }
+
+int main()
+{
+Obrok o;
+srand(time(NULL));
+
+int op; 
+int mesoo;
+int gramazaa;
+int prilogg;
+
+bool b;
+
+do
+{
+op = meni();
+
+switch(op)
+{
+
+case 1:
+cout<<"Biranje gramaze i vrste mesa: "<<endl;
+cout<<"1. Svinjetina\n2. Junetina\n3. Piletina\n4. Bez mesa\n"<<endl;
+cin>>odaberiMeso>>gramazaMesa;
+
+if(odaberiMeso == 1)
+b= O.odaberiMeso(SVINJETINA,gramazaMesa);
+else if(odaberiMeso == 2)
+b = O.odaberiMeso(JUNETINA,gramazaMesa);
+else if(odaberiMeso == 3)
+b = O.odaberiMeso(PILETINA,gramazaMesa);
+else
+b = O.odaberiMeso(BEZ_MESA,gramazaMesa);
+
+break;
+
+case 2:
+cout<<"Biranje priloga: "<<endl;
+cout<<"1. Riza\n2.Pomfrit\n3. Pasulj\n4. Testenina\nBez priloga\n"<<endl;
+cin>>prilogg;
+
+if(prilogg == 1)
+b = O.odaberiPrilog(RIZA);
+else if(prilogg == 2)
+b = O.odaberiPrilog(POMFRIT);
+else if(prilogg ==3 )
+b = O.odaberiPrilog(PASULJ);
+else if(prilogg == 4)        
+b = O.odaberiPrilog(TESTENINA);     
+else
+b = O.odaberiPrilog(BEZ_PRILOGA);
+
+break;
+
+case 3:
+b = O.spremiObrok();
+break;
+
+}
+
+if(op>3 || op<1)
+cout<<"Izabrali ste nepostojecu opciju!"<<endl;
+else if(b == true)
+ispisiObrok(O);
+
+}while(O.getStanjeObroka()!= ZAGOREO && O.getStanjeObroka()!= SPREMAN);
+
+return 0;
+}
