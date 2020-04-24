@@ -154,3 +154,13 @@ return false;
 }
 
 };
+
+void ispisiObrok(const Obrok& o)
+{
+cout<<"----------------------"<<endl;
+ispisMesa(o.getMeso());
+ispisiPrilog(o.getPrilog());
+cout<<o.getStanje()<<endl;
+cout<<"----------------------"<<endl;
+}
+
