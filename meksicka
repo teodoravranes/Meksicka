@@ -107,7 +107,7 @@ else if(stanje == ODABRANO_MESO)
 return "Odabrali ste meso";
 else if(stanje == ODABRAN_PRILOG)
 return "Odabrali ste prilog";
-else if(stanje == Zagoreo)
+else if(stanje == ZAGOREO)
 return "Obrok je zagoreo";
 else
 return "Obrok je spreman";
@@ -124,4 +124,15 @@ stanje = odabranoMeso;
 return true;
 }else
 return false;
+}
+
+bool odaberiPrilog(prilog pr){
+if(stanje == ODABRANO_MESO){
+stanje = ODABRAN_PRILOG;
+p.setPrilog(pr);
+return true;
+}else
+{
+return false;
+}
 }
