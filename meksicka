@@ -164,3 +164,12 @@ cout<<o.getStanje()<<endl;
 cout<<"----------------------"<<endl;
 }
 
+int meni()
+{
+int op;
+cout<<"1. Izbor mesa"<<endl;
+cout<<"2. Izbor priloga"<<endl;
+cout<<"3. Spremite porudzbinu"<<endl;
+cin>>opcija;
+return opcija;
+}
