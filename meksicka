@@ -96,3 +96,22 @@ public:
 Obrok() : m(), p() {stanje=POCETAK_ODABIRA;}
 Obrok(const Obrok &o) :m(o.m), p(o.p){stanje=o.stanje;}
 
+Meso getMeso()const {return m;}
+Prilog getPrilog()const {return p;}
+
+string getStanje()const
+{
+if(stanje == POCETAK_ODABIRA)
+return "Birajte obrok";
+else if(stanje == ODABRANO_MESO)
+return "Odabrali ste meso";
+else if(stanje == ODABRAN_PRILOG)
+return "Odabrali ste prilog";
+else if(stanje == Zagoreo)
+return "Obrok je zagoreo";
+else
+return "Obrok je spreman";
+}
+
+stanjeObroka getStanjeObroka() {return s;}
+   
